@@ -1,6 +1,6 @@
 import { RouterProvider } from 'react-router-dom'
 import router from './router'
-import { StockContext, StockContextProvider } from './contexts/StockContext'
+import { StockContextProvider } from './contexts/StockContext'
 
 function App() {
 

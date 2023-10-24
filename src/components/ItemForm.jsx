@@ -1,48 +1,48 @@
-import PropTypes from "prop-types"
-import StockItem, { CATEGORIES } from "../entities/StockItem"
-import { useRef, useState } from "react"
-import useStock from "../hooks/useStock"
+import PropTypes from "prop-types";
+import StockItem, { CATEGORIES } from "../entities/StockItem";
+import { useRef, useState } from "react";
+import useStock from "../hooks/useStock";
 
 ItemForm.propTypes = {
-    itemToUpdate: PropTypes.object
-}
+    itemToUpdate: PropTypes.object,
+    };
 
-export default function ItemForm({ itemToUpdate }) {
+    export default function ItemForm({ itemToUpdate }) {
     const defaultItem = {
         name: "",
         description: "",
         quantity: 0,
         price: 0,
-        category: ""
-    }
+        category: "",
+    };
 
-const [item, setItem] = useState(itemToUpdate ? itemToUpdate : defaultItem)
-const { addItem, updateItem } = useStock()
-const inputRef = useRef(null)
+    const [item, setItem] = useState(itemToUpdate ? itemToUpdate : defaultItem);
+    const { addItem, updateItem } = useStock();
+    const inputRef = useRef(null);
 
-const handleChange = (ev) => {
-    setItem((current) => ({ ...current, [ev.target.name]: ev.target.value }))
-}
+    const handleChange = (ev) => {
+        setItem((current) => ({ ...current, [ev.target.name]: ev.target.value }));
+    };
 
-const handleSubmit = (ev) => {
-    ev.preventDefault()
-    try {
+    const handleSubmit = (ev) => {
+        ev.preventDefault();
+        try {
         if (itemToUpdate) {
-        updateItem(itemToUpdate.id, item)
-        alert("Item atualizado com sucesso!")
+            updateItem(itemToUpdate.id, item);
+            alert("Item atualizado com sucesso!");
         } else {
-        const validItem = new StockItem(item)
-        addItem(validItem)
-            setItem(defaultItem)
-            alert("Item cadastrado com sucesso!")
+            const validItem = new StockItem(item);
+            addItem(validItem);
+            setItem(defaultItem);
+            alert("Item cadastrado com sucesso!");
         }
         } catch (err) {
-        console.log(err.message)
-        alert("Ocorreu um erro.")
+        console.log(err.message);
+        alert("Ocorreu um erro.");
         } finally {
-        inputRef.current.focus()
+        inputRef.current.focus();
         }
-    }
+    };
 
     return (
         <form onSubmit={handleSubmit}>
@@ -79,7 +79,7 @@ const handleSubmit = (ev) => {
                 name="price"
                 id="price"
                 required
-                min={0.00}
+                min={0.0}
                 step={0.01}
                 value={item.price}
                 onChange={handleChange}
@@ -94,7 +94,9 @@ const handleSubmit = (ev) => {
                 value={item.category}
                 onChange={handleChange}
             >
-                <option disabled value="">Selecione uma categoria...</option>
+                <option disabled value="">
+                Selecione uma categoria...
+                </option>
                 {CATEGORIES.map((category) => (
                 <option
                     key={category}
@@ -110,17 +112,15 @@ const handleSubmit = (ev) => {
         <div className="form-control">
             <label htmlFor="description">Descrição</label>
             <textarea
-                name="description"
-                id="description"
-                required
-                rows={6}
-                value={item.description}
-                onChange={handleChange}
+            name="description"
+            id="description"
+            required
+            rows={6}
+            value={item.description}
+            onChange={handleChange}
             ></textarea>
         </div>
-        <button className="button is-primary is-large">
-            Salvar
-        </button>
+        <button className="button is-primary is-large">Salvar</button>
         </form>
-    )
+    );
 }

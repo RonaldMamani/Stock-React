@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import useStock from "../hooks/useStock";
 
 export default function ItemsTable() {
-    const { items } = useStock()
+    const { items } = useStock();
 
     return (
         <table>
@@ -23,10 +23,7 @@ export default function ItemsTable() {
                 <td>{item.quantity} unid.</td>
                 <td>{item.category}</td>
                 <td>
-                <Link
-                    to={`/items/${item.id}`}
-                    className="button is-primary is-small"
-                >
+                <Link to={`/items/${item.id}`} className="button is-primary is-small">
                     Ver
                 </Link>
                 <Link to={`/items/${item.id}/update`} className="button is-small">
@@ -37,5 +34,5 @@ export default function ItemsTable() {
             ))}
         </tbody>
         </table>
-    );
+    )
 }
