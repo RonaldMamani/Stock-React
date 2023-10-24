@@ -33,7 +33,7 @@ StockContextProvider.propTypes = {
 
     const updateItem = (itemId, newAttributes) => {
         setItems(current => {
-        const itemIndex = current.findIndex(i => i.id === itemId)
+        const itemIndex = current.findIndex(i => i.id === +itemId)
         const updatedItems = [...current]
         Object.assign(updatedItems[itemIndex], newAttributes, { updatedAt: new Date() })
         localStorage.setItem('react-stock', JSON.stringify(updatedItems))
