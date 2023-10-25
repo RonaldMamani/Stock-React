@@ -14,7 +14,7 @@ export default function RootLayout() {
                 <Outlet/>
             </div>
             <footer>
-                <span>Feito com React Router</span>
+                <span>Sistemas de Estoque com ReactJS</span>
             </footer>
         </>
     )
