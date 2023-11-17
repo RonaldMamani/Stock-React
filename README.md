@@ -1,8 +1,42 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Stock
 
-Currently, two official plugins are available:
+Projeto realizado com ReactJs com JavaScript, tambem utilizando CSS puro, o projeto é um sistema de Gerenciamento de Estoque onde podemos adicionar, modificar e remover novos itens no Estoque.
+## Deploy
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O Projeto está em hospedagem na Vercel o link esta abaixo:
+
+Link: https://stock-react-eight.vercel.app/
+
+
+## Instalação
+
+Instalação das dependencias do projeto
+
+```bash
+  npm install
+```
+
+Rodar o Codigo do Projeto
+
+```
+    npm start
+```
+    
+## Aprendizados
+
+O Projeto do React Stock foi bastante interessante pois solidificou meu aprendizado nos hooks do React como useState, useEffect e no Context, alem de me apresentar ao React Router onde aprendi a usar Rotas no React com Rotas Estaticas e Dinamicas em React. 
+
+
+## Funcionalidades
+
+- Adicionar, Remover e  Modificar itens
+- Design Responsivo
+- Rotas em React
+- Vizualizações de Itens no Painel Geral
+
+
+## Autores
+
+- [RonaldMamani](https://github.com/RonaldMamani)
+
